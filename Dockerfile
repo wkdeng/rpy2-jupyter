@@ -7,12 +7,12 @@ ENV SHELL=/bin/bash
 USER root
 
 
-RUN apt-get update -qq \
-  && xargs apt-get -y --no-install-recommends install < /tmp/dependencies.sys \
-  && apt-get clean \
-  && apt-get autoremove \
-  && rm -rf /var/lib/apt/lists/* \
-  && pip install -r /tmp/requirements.txt --no-cache-dir
+RUN apt-get update -qq 
+RUN xargs apt-get -y --no-install-recommends install < /tmp/dependencies.sys 
+RUN apt-get clean 
+RUN apt-get autoremove 
+RUN rm -rf /var/lib/apt/lists/* 
+RUN pip install -r /tmp/requirements.txt --no-cache-dir
 
 RUN R -f /tmp/packages.R
 
