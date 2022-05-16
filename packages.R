@@ -3,21 +3,21 @@ pkgs <- c(
   'devtools',
   # tidyverse suite
   'tidyverse',
-  'multidplyr',
+  # 'multidplyr',
   'dplyr',
-  'dtplyr',
-  'dbplyr',
+  # 'dtplyr',
+  # 'dbplyr',
   'sparklyr',
   'devtools',
-  'formatR',
-  'remotes',
-  'selectr',
-  'tidymodels',
+  # 'formatR',
+  # 'remotes',
+  # 'selectr',
+  # 'tidymodels',
   'tiff',
   "Rgraphviz",
   "rmarkdown",
-  "httr",
-  "knitr",
+  # "httr",
+  # "knitr",
   # Bioconductor packages
   # 'PCAtools',
   # "clusterProfiler",
@@ -94,8 +94,8 @@ pkgs_to_install <- pkgs[pkgs %in% ap]
 
 BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
 # From github
-devtools::install_github(repo = "TillF/ppso", upgrade = 'always', force = TRUE)
-devtools::install_github('satijalab/seurat-data')
+# devtools::install_github(repo = "TillF/ppso", upgrade = 'always', force = TRUE)
+# devtools::install_github('satijalab/seurat-data')
 
 suppressWarnings(BiocManager::install(update=TRUE, ask=FALSE))
 # Remove tmp directory
