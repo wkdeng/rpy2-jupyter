@@ -42,7 +42,7 @@ When done using Server, terminate the job by:
       scancel -f ${SLURM_JOB_ID}
 END
 
-singularity exec --cleanenv ${HOME}/scr/software/docker_img/bioinfo_env_jpt.sif \
+singularity exec --cleanenv ${HOME}/scr/software/docker_img/bioinfo_env_jpt_svr.sif \
    jupyter notebook --ip=0.0.0.0 --no-browser --port=${PORT} --notebook-dir=/home/dengw1/scr/notebooks
 
 printf 'jupyter notebook exited' 1>&2

@@ -58,7 +58,7 @@ pkgs <- c(
 
   # single cell
   'Seurat',
-  'ggtheme',
+  'ggthemes',
   'SeuratData',
   'Signac',
   'EnsDb.Hsapiens.v86',

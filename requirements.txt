@@ -12,5 +12,5 @@ snakemake
 umap
 matplotlib
 mappy
-pyVCF
 cutadapt
+pysam

@@ -1,4 +1,4 @@
-name: jrocker
+name: jpt_svr
 
 on:
   push:

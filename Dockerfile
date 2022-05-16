@@ -106,7 +106,8 @@ RUN pip3 install --no-cache-dir pyBigWig
 RUN pip3 install --no-cache-dir pysam
 RUN pip3 install --no-cache-dir PyYAML
 RUN pip3 install --no-cache-dir umap
-
+RUN pip3 install --no-cache-dir jupyterthemes
+RUN jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T
 
 
 # RUN pip3 install -r /tmp/requirements.txt --no-cache-dir --user
