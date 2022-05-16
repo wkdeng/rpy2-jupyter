@@ -43,13 +43,15 @@ USER root
 
 COPY install_jupyter.sh /opt/install_jupyter.sh
 COPY setup_jupyter.sh /opt/setup_jupyter.sh
+COPY install_nodejs_npm.sh /opt/install_nodejs_npm.sh
 
 RUN apt-get update -qq
 RUN apt-get install -y curl 
 RUN apt-get remove -y --purge nodejs npm 
-# RUN wget -qO- https://deb.nodesource.com/setup_17.x | bash -
+RUN wget -qO- https://deb.nodesource.com/setup_17.x | bash -
 RUN apt-get install -y nodejs 
-RUN wget -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - 
+RUN sh /opt/install_nodejs_npm.sh
+# RUN wget -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - 
 RUN apt-get update -qq 
 RUN apt-get install -y yarn 
 RUN npm install -g configurable-http-proxy 
