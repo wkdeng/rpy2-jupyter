@@ -1,5 +1,4 @@
 scipy
-pysam
 pyBigWig
 statistics
 numpy 
