@@ -39,7 +39,6 @@ ARG TINI_VERSION=v3.0.1
 ENV SHELL=/bin/bash \
     NB_USER=jupyteruser \
     NB_UID=1000
-
 USER root
 
 COPY install_jupyter.sh /opt/install_jupyter.sh
@@ -48,7 +47,7 @@ COPY setup_jupyter.sh /opt/setup_jupyter.sh
 RUN apt-get update -qq
 RUN apt-get install -y curl 
 RUN apt-get remove -y --purge nodejs npm 
-RUN curl -sL https://deb.nodesource.com/setup_17.x | bash - 
+RUN wget -qO- https://deb.nodesource.com/setup_17.x | bash -
 RUN apt-get install -y nodejs 
 RUN wget -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - 
 RUN apt-get update -qq 
