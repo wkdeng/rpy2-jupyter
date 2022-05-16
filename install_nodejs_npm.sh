@@ -1,4 +1,5 @@
 #!/bin/bash
+## Wankun Deng notes: modified from original version, specify Ubuntu version to focal as jammy is not in the list. ##
 
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
