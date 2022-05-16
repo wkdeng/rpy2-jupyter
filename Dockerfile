@@ -48,10 +48,10 @@ COPY install_nodejs_npm.sh /opt/install_nodejs_npm.sh
 RUN apt-get update -qq
 RUN apt-get install -y curl 
 RUN apt-get remove -y --purge nodejs npm 
-RUN wget -qO- https://deb.nodesource.com/setup_17.x | bash -
+RUN chmod +x /opt/install_nodejs_npm.sh && /opt/install_nodejs_npm.sh
+# RUN wget -qO- https://deb.nodesource.com/setup_17.x | bash -
 RUN apt-get install -y nodejs 
-RUN sh /opt/install_nodejs_npm.sh
-# RUN wget -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - 
+RUN wget -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - 
 RUN apt-get update -qq 
 RUN apt-get install -y yarn 
 RUN npm install -g configurable-http-proxy 
