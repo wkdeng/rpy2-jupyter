@@ -1,4 +1,4 @@
-FROM ubuntu:Jammy
+FROM ubuntu:jammy
 LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
 
 
