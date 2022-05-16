@@ -42,33 +42,31 @@ USER root
 COPY install_jupyter.sh /opt/install_jupyter.sh
 COPY setup_jupyter.sh /opt/setup_jupyter.sh
 
-RUN \
-  apt-get update -qq \
-  && apt-get install -y curl \
-  && apt-get remove -y --purge nodejs npm \
-  && curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash - \
-  && apt-get install -y nodejs \
-  && wget -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-  && apt-get update -qq \
-  && apt-get install -y yarn \
-  && npm install -g configurable-http-proxy \
-  && rm -rf /var/lib/apt/lists/* \
-  && useradd -m -s /bin/bash -N -u "${NB_UID}" "${NB_USER}" \
-  && sh /opt/install_jupyter.sh \
-  && echo "${NB_USER}" 'ALL=(ALL) NOPASSWD: /usr/bin/apt-get' >> /etc/sudoers \
-  && wget --quiet https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini \
-      -P /usr/local/bin/ \
-  && chmod +x /usr/local/bin/tini \
-  && sh /opt/setup_jupyter.sh \
-  && echo "Add Jupyter scripts emerging as ad hoc interface" \
-  && git clone --depth=1 https://github.com/jupyter/docker-stacks.git /tmp/docker-stacks \
-  && cd /tmp/docker-stacks/base-notebook \
-  && sed -e 's/jovyan/'"${NB_USER}"'/g' start.sh > /usr/local/bin/start.sh \
-  && cp start-notebook.sh /usr/local/bin/ \
-  && cp start-singleuser.sh /usr/local/bin/ \
-  && mkdir -p /etc/jupyter/ \
-  && cp jupyter_notebook_config.py /etc/jupyter/ \
-  && rm -rf /tmp/docker-stacks
+RUN apt-get update -qq
+RUN apt-get install -y curl 
+RUN apt-get remove -y --purge nodejs npm 
+RUN curl -sL https://deb.nodesource.com/setup_17.x | sudo -E bash - 
+RUN apt-get install -y nodejs 
+RUN wget -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - 
+RUN apt-get update -qq 
+RUN apt-get install -y yarn 
+RUN npm install -g configurable-http-proxy 
+RUN rm -rf /var/lib/apt/lists/* 
+RUN useradd -m -s /bin/bash -N -u "${NB_UID}" "${NB_USER}" 
+RUN sh /opt/install_jupyter.sh
+RUN echo "${NB_USER}" 'ALL=(ALL) NOPASSWD: /usr/bin/apt-get' >> /etc/sudoers
+RUN wget --quiet https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini -P /usr/local/bin/
+RUN chmod +x /usr/local/bin/tini
+RUN sh /opt/setup_jupyter.sh
+RUN echo "Add Jupyter scripts emerging as ad hoc interface"
+RUN git clone --depth=1 https://github.com/jupyter/docker-stacks.git /tmp/docker-stacks
+RUN cd /tmp/docker-stacks/base-notebook
+RUN sed -e 's/jovyan/'"${NB_USER}"'/g' start.sh > /usr/local/bin/start.sh
+RUN cp start-notebook.sh /usr/local/bin/
+RUN cp start-singleuser.sh /usr/local/bin/
+RUN mkdir -p /etc/jupyter/
+RUN cp jupyter_notebook_config.py /etc/jupyter/
+RUN rm -rf /tmp/docker-stacks
 
 
 ###### Install required packages ######
