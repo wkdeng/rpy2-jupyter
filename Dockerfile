@@ -68,8 +68,8 @@ RUN cd /tmp/docker-stacks/base-notebook
 # RUN sed -e 's/jovyan/'"${NB_USER}"'/g' start.sh > /usr/local/bin/start.sh
 # RUN cp start-notebook.sh /usr/local/bin/
 # RUN cp start-singleuser.sh /usr/local/bin/
-RUN mkdir -p /etc/jupyter/
-RUN cp jupyter_notebook_config.py /etc/jupyter/
+# RUN mkdir -p /etc/jupyter/
+# RUN cp jupyter_notebook_config.py /etc/jupyter/
 RUN rm -rf /tmp/docker-stacks
 
 
