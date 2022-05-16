@@ -10,16 +10,7 @@
 
 # Create temporary directory to be populated with directories to bind-mount in the container
 # where writable file systems are necessary. Adjust path as appropriate for your computing environment.
-workdir=$(python -c 'import tempfile;from pathlib import Path; print(tempfile.mkdtemp(prefix="jpt_", dir=str(Path.home()/"scr/tmp")))')
-
-mkdir -p -m 700 ${workdir}/tmp 
-
-
-
-chmod +x ${workdir}/rsession.sh
-
-export SINGULARITY_BIND="
-/scr1/users/dengw1/notebooks:/scr1/users/dengw1/notebooks,\
+export SINGULARITY_BIND="/scr1/users/dengw1/notebooks:/scr1/users/dengw1/notebooks,\
 /mnt/isilon/xing_lab/dengw1/mouse_lowinput:/mnt/isilon/xing_lab/dengw1/mouse_lowinput,\
 /mnt/isilon/xing_lab/dengw1/snakerun:/mnt/isilon/xing_lab/dengw1/snakerun"
 

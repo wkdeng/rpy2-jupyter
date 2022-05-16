@@ -12,7 +12,7 @@ RUN xargs apt-get -y --no-install-recommends install < /tmp/dependencies.sys
 RUN apt-get clean 
 RUN apt-get autoremove 
 RUN rm -rf /var/lib/apt/lists/* 
-RUN pip install pandas --no-cache-dir
+RUN pip3 install pandas --no-cache-dir
 
 RUN R -f /tmp/packages.R
 
