@@ -6,6 +6,8 @@ COPY dependencies.sys requirements.txt packages.R /tmp/
 ENV SHELL=/bin/bash
 USER root
 
+RUN apt install apt-transport-https software-properties-common
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 RUN sed -i -e 's|disco|focal|g' /etc/apt/sources.list
 RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" >> /etc/apt/sources.list
 RUN apt-get update
