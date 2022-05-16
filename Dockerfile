@@ -47,7 +47,7 @@ COPY setup_jupyter.sh /opt/setup_jupyter.sh
 RUN apt-get update -qq
 RUN apt-get install -y curl 
 RUN apt-get remove -y --purge nodejs npm 
-RUN wget -qO- https://deb.nodesource.com/setup_17.x | bash -
+# RUN wget -qO- https://deb.nodesource.com/setup_17.x | bash -
 RUN apt-get install -y nodejs 
 RUN wget -O - https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - 
 RUN apt-get update -qq 
