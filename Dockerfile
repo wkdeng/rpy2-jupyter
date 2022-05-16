@@ -102,7 +102,7 @@ RUN pip3 install --no-cache-dir scikit-learn
 RUN pip3 install --no-cache-dir snakemake
 RUN pip3 install --no-cache-dir matplotlib
 RUN pip3 install --no-cache-dir mappy
-RUN pip3 install --no-cache-dir pyVCF
+# RUN pip3 install --no-cache-dir pyVCF
 RUN pip3 install --no-cache-dir cutadapt
 RUN pip3 install --no-cache-dir pyBigWig
 RUN pip3 install --no-cache-dir pysam
