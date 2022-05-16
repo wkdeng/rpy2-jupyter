@@ -12,7 +12,7 @@
 # where writable file systems are necessary. Adjust path as appropriate for your computing environment.
 export SINGULARITY_BIND="/scr1/users/dengw1/notebooks:/scr1/users/dengw1/notebooks,\
 /mnt/isilon/xing_lab/dengw1/mouse_lowinput:/mnt/isilon/xing_lab/dengw1/mouse_lowinput,\
-/mnt/isilon/xing_lab/dengw1/snakerun:/mnt/isilon/xing_lab/dengw1/snakerun"
+/mnt/isilon/xing_lab/dengw1/snakerun:/mnt/isilon/xing_lab/dengw1/snakerun,/cm/shared/apps_chop"
 
 export SINGULARITYENV_USER=$(id -un)
 export SINGULARITYENV_PASSWORD="sirius123"

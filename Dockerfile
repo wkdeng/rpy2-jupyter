@@ -7,6 +7,7 @@ ENV SHELL=/bin/bash
 USER root
 
 RUN sed -i -e 's|disco|focal|g' /etc/apt/sources.list
+RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/" >> /etc/apt/sources.list
 RUN apt-get update
 RUN xargs apt-get -y --no-install-recommends install < /tmp/dependencies.sys 
 RUN apt-get clean 
@@ -19,4 +20,4 @@ RUN R -f /tmp/packages.R
 EXPOSE 8888
 
 ENTRYPOINT ["/usr/local/bin/tini", "--"]
-CMD ["start-notebook.sh"]
+CMD ["/init"]

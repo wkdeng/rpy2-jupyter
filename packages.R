@@ -1,6 +1,7 @@
 
 pkgs <- c(
   'devtools',
+  'ComplexHeatmap',
   # tidyverse suite
   'tidyverse',
   # 'multidplyr',
@@ -57,6 +58,7 @@ pkgs <- c(
 
   # single cell
   'Seurat',
+  'ggtheme',
   'SeuratData',
   'Signac',
   'EnsDb.Hsapiens.v86',
