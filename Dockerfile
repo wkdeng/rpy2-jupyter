@@ -7,7 +7,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV CRAN_MIRROR=https://cloud.r-project.org \
     CRAN_MIRROR_TAG=-cran40
 
-ARG RPY2_VERSION=RELEASE_3_5_6
+ARG RPY2_VERSION=RELEASE_3_5_1
 ARG RPY2_CFFI_MODE=BOTH
 
 COPY install_apt.sh /opt/
@@ -24,13 +24,11 @@ RUN \
   && apt-get autoclean -y \
   && rm -rf /var/lib/apt/lists/*
 
-RUN \
-  python3 -m pip --no-cache-dir install https://github.com/rpy2/rpy2/archive/"${RPY2_VERSION}".zip && \
-  rm -rf /root/.cache
+RUN python3 -m pip --no-cache-dir install https://github.com/rpy2/rpy2/archive/"${RPY2_VERSION}".zip 
+RUN rm -rf /root/.cache
+
 
 ###### Install Jupyter (Credit: github.com/rpy2/rpy2-docker) ######
-
-
 ARG RPY2_VERSION=master
 ARG DEBIAN_FRONTEND=noninteractive
 ENV JUPYTER_ENABLE_LAB=1
