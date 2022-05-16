@@ -90,7 +90,28 @@ RUN xargs apt-get -y --no-install-recommends install < /tmp/dependencies.sys
 RUN apt-get clean 
 RUN apt-get autoremove 
 RUN rm -rf /var/lib/apt/lists/* 
-RUN pip3 install -r /tmp/requirements.txt --no-cache-dir
+
+RUN pip3 install --no-cache-dir scipy
+RUN pip3 install --no-cache-dir statistics
+RUN pip3 install --no-cache-dir numpy 
+RUN pip3 install --no-cache-dir pandas 
+RUN pip3 install --no-cache-dir statsmodels
+RUN pip3 install --no-cache-dir pybedtools
+RUN pip3 install --no-cache-dir sklearn
+RUN pip3 install --no-cache-dir scikit-learn
+RUN pip3 install --no-cache-dir snakemake
+RUN pip3 install --no-cache-dir matplotlib
+RUN pip3 install --no-cache-dir mappy
+RUN pip3 install --no-cache-dir pyVCF
+RUN pip3 install --no-cache-dir cutadapt
+RUN pip3 install --no-cache-dir pyBigWig
+RUN pip3 install --no-cache-dir pysam
+RUN pip3 install --no-cache-dir PyYAML
+RUN pip3 install --no-cache-dir umap
+
+
+
+# RUN pip3 install -r /tmp/requirements.txt --no-cache-dir --user
 
 RUN R -f /tmp/packages.R
 
