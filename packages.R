@@ -17,6 +17,9 @@ pkgs <- c(
   'tiff',
   "Rgraphviz",
   "rmarkdown",
+  'htmlwidgets',
+  'webshot',
+  'networkD3',
   # "httr",
   # "knitr",
   # Bioconductor packages
@@ -84,7 +87,8 @@ pkgs <- c(
   'stringr',
   'RColorBrewer',
   'Cooccur',
-  'plyr'
+  'plyr',
+  'networkD3'
 )
 
 install.packages('BiocManager')

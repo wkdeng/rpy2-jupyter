@@ -10,9 +10,9 @@
 
 # Create temporary directory to be populated with directories to bind-mount in the container
 # where writable file systems are necessary. Adjust path as appropriate for your computing environment.
-export SINGULARITY_BIND="/scr1/users/dengw1/notebooks:/scr1/users/dengw1/notebooks,\
-/mnt/isilon/xing_lab/dengw1/mouse_lowinput:/mnt/isilon/xing_lab/dengw1/mouse_lowinput,\
-/mnt/isilon/xing_lab/dengw1/snakerun:/mnt/isilon/xing_lab/dengw1/snakerun,/cm/shared/apps_chop"
+export SINGULARITY_BIND="/scr1/users/dengw1/notebooks,\
+/mnt/isilon/xing_lab/dengw1/mouse_lowinput,\
+/mnt/isilon/xing_lab/dengw1/snakerun,/cm/shared/apps_chop"
 
 export SINGULARITYENV_USER=$(id -un)
 export SINGULARITYENV_PASSWORD="sirius123"
@@ -26,7 +26,7 @@ cat 1>&2 <<END
 
    For connection from vscode-remote to jupyter notebook on login node, use http://${HOSTNAME}:${PORT} as jupyter server in vscode
    For connection from local browser:
-      ssh -N -L ${PORT}:${HOSTNAME}:${PORT} ${SINGULARITYENV_USER}@dengw1-hpc.research.chop.edu
+      ssh -N -L 8888:${HOSTNAME}:${PORT} ${SINGULARITYENV_USER}@dengw1-hpc.research.chop.edu
       and point your web browser to http://localhost:${PORT}
 
 2. log in to jupyter server using the following credentials:
