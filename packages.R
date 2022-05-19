@@ -20,6 +20,7 @@ pkgs <- c(
   'htmlwidgets',
   'webshot',
   'networkD3',
+  'pandoc',
   # "httr",
   # "knitr",
   # Bioconductor packages
@@ -46,6 +47,7 @@ pkgs <- c(
   "GenomicRanges",
   "GenomicAlignments",
   "GenomicFeatures",
+
   # "SummarizedExperiment",
   # "VariantAnnotation",
   # "DelayedArray",
