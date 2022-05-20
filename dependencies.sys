@@ -8,3 +8,4 @@ ncbi-blast+
 fastqc
 vcftools
 vim
+pandoc
