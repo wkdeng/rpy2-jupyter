@@ -9,7 +9,7 @@ sklearn
 PyYAML
 scikit-learn
 snakemake
-umap
+umap-learn
 matplotlib
 mappy
 cutadapt

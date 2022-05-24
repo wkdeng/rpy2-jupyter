@@ -20,6 +20,7 @@ pkgs <- c(
   'htmlwidgets',
   'webshot',
   'networkD3',
+  'psycModel',
   # "httr",
   # "knitr",
   # Bioconductor packages
