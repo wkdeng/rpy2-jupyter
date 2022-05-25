@@ -21,6 +21,7 @@ pkgs <- c(
   'webshot',
   'networkD3',
   'psycModel',
+  'rlist',
   # "httr",
   # "knitr",
   # Bioconductor packages
