@@ -88,8 +88,8 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD5
 
 RUN pip3 install --no-cache-dir scipy
 RUN pip3 install --no-cache-dir statistics
-RUN pip3 install --no-cache-dir numpy 
-RUN pip3 install --no-cache-dir pandas 
+# RUN pip3 install --no-cache-dir numpy 
+# RUN pip3 install --no-cache-dir pandas 
 RUN pip3 install --no-cache-dir statsmodels
 RUN pip3 install --no-cache-dir pybedtools
 RUN pip3 install --no-cache-dir sklearn
