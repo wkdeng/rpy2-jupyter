@@ -107,7 +107,7 @@ RUN pip3 install --no-cache-dir jupyterthemes
 # RUN pip3 install -r /tmp/requirements.txt --no-cache-dir
 RUN jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T 
 RUN jupyter labextension install @jupyterlab/toc 
-# RUN R -f /tmp/packages.R
+RUN R -f /tmp/packages.R
 
 EXPOSE 8888
 
