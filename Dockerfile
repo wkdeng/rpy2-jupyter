@@ -88,7 +88,6 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD5
 
 RUN pip3 install --no-cache-dir scipy
 RUN pip3 install --no-cache-dir statistics
-# RUN pip3 install --no-cache-dir numpy 
 # RUN pip3 install --no-cache-dir pandas 
 RUN pip3 install --no-cache-dir statsmodels
 RUN pip3 install --no-cache-dir pybedtools
@@ -102,12 +101,13 @@ RUN pip3 install --no-cache-dir cutadapt
 RUN pip3 install --no-cache-dir pyBigWig
 RUN pip3 install --no-cache-dir pysam
 RUN pip3 install --no-cache-dir PyYAML
+RUN pip3 install --no-cache-dir numpy --upgrade --force-reinstall
 RUN pip3 install --no-cache-dir umap-learn
 RUN pip3 install --no-cache-dir jupyterthemes
 # RUN pip3 install -r /tmp/requirements.txt --no-cache-dir
 RUN jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T 
 RUN jupyter labextension install @jupyterlab/toc 
-RUN R -f /tmp/packages.R
+# RUN R -f /tmp/packages.R
 
 EXPOSE 8888
 
