@@ -69,7 +69,7 @@
 # ###### Install required packages ######
 FROM dengwankun/bioinfo_env:jpt_base
 LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
-COPY dependencies.sys requirements.txt packages.R /tmp/
+COPY dependencies.sys requirements.txt packages.R install_homer.sh /tmp/
 ENV SHELL=/bin/bash
 USER root
 
@@ -80,34 +80,35 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD5
     && xargs apt-get -y --no-install-recommends install < /tmp/dependencies.sys \
     && apt-get clean \
     && apt-get autoremove \ 
+    && bash /tmp/install_homer.sh \
     && rm -rf /var/lib/apt/lists/* 
     # && pip3 install -r /tmp/requirements.txt --no-cache-dir \
     # && jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T \
     # && jupyter labextension install @jupyterlab/toc \
     # && R -f /tmp/packages.R
 
-RUN pip3 install --no-cache-dir scipy
-RUN pip3 install --no-cache-dir statistics
-# RUN pip3 install --no-cache-dir pandas 
-RUN pip3 install --no-cache-dir statsmodels
-RUN pip3 install --no-cache-dir pybedtools
-RUN pip3 install --no-cache-dir sklearn
-RUN pip3 install --no-cache-dir scikit-learn
-RUN pip3 install --no-cache-dir snakemake
-RUN pip3 install --no-cache-dir matplotlib
-RUN pip3 install --no-cache-dir mappy
-# RUN pip3 install --no-cache-dir pyVCF
-RUN pip3 install --no-cache-dir cutadapt
-RUN pip3 install --no-cache-dir pyBigWig
-RUN pip3 install --no-cache-dir pysam
-RUN pip3 install --no-cache-dir PyYAML
-RUN pip3 install --no-cache-dir numpy --upgrade --force-reinstall
-RUN pip3 install --no-cache-dir umap-learn
-RUN pip3 install --no-cache-dir jupyterthemes
-# RUN pip3 install -r /tmp/requirements.txt --no-cache-dir
-RUN jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T 
-RUN jupyter labextension install @jupyterlab/toc 
-RUN R -f /tmp/packages.R
+# RUN pip3 install --no-cache-dir scipy
+# RUN pip3 install --no-cache-dir statistics
+# # RUN pip3 install --no-cache-dir pandas 
+# RUN pip3 install --no-cache-dir statsmodels
+# RUN pip3 install --no-cache-dir pybedtools
+# RUN pip3 install --no-cache-dir sklearn
+# RUN pip3 install --no-cache-dir scikit-learn
+# RUN pip3 install --no-cache-dir snakemake
+# RUN pip3 install --no-cache-dir matplotlib
+# RUN pip3 install --no-cache-dir mappy
+# # RUN pip3 install --no-cache-dir pyVCF
+# RUN pip3 install --no-cache-dir cutadapt
+# RUN pip3 install --no-cache-dir pyBigWig
+# RUN pip3 install --no-cache-dir pysam
+# RUN pip3 install --no-cache-dir PyYAML
+# RUN pip3 install --no-cache-dir numpy --upgrade --force-reinstall
+# RUN pip3 install --no-cache-dir umap-learn
+# RUN pip3 install --no-cache-dir jupyterthemes
+# # RUN pip3 install -r /tmp/requirements.txt --no-cache-dir
+# RUN jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T 
+# RUN jupyter labextension install @jupyterlab/toc 
+# RUN R -f /tmp/packages.R
 
 EXPOSE 8888
 

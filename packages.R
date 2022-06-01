@@ -22,6 +22,7 @@ pkgs <- c(
   'networkD3',
   'psycModel',
   'rlist',
+  'WGCNA',
   # "httr",
   # "knitr",
   # Bioconductor packages
