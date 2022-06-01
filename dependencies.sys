@@ -9,3 +9,4 @@ fastqc
 vcftools
 vim
 pandoc
+libssl-dev
