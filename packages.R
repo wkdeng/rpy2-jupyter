@@ -23,6 +23,7 @@ pkgs <- c(
   'psycModel',
   'rlist',
   'WGCNA',
+  'RUVSeq',
   # "httr",
   # "knitr",
   # Bioconductor packages
