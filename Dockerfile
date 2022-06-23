@@ -86,8 +86,8 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD5
     # && jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T \
     # && jupyter labextension install @jupyterlab/toc \
     # && R -f /tmp/packages.R
-RUN cd /tmp/ && git clone https://github.com/alexdobin/STAR.git && cd STAR && make STAR \
-    && cp STAR /usr/local/bin 
+# RUN cd /tmp/ && git clone https://github.com/alexdobin/STAR.git && cd STAR && make STAR \
+#     && cp STAR /usr/local/bin 
 
 RUN pip3 install --no-cache-dir scipy
 RUN pip3 install --no-cache-dir statistics
