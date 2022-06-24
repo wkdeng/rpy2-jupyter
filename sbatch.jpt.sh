@@ -27,7 +27,7 @@ cat 1>&2 <<END
    For connection from vscode-remote to jupyter notebook on login node, use http://${HOSTNAME}:${PORT} as jupyter server in vscode
    For connection from local browser:
       ssh -N -L 8888:${HOSTNAME}:${PORT} ${SINGULARITYENV_USER}@dengw1-hpc.research.chop.edu
-      and point your web browser to http://localhost:${PORT}
+      and point your web browser to http://localhost:8888
 
 2. log in to jupyter server using the following credentials:
 

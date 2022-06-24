@@ -51,7 +51,7 @@ pkgs <- c(
   "GenomicAlignments",
   "GenomicFeatures",
   'tximport',
-
+  'rhdf5',
   # "SummarizedExperiment",
   # "VariantAnnotation",
   # "DelayedArray",
