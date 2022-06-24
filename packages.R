@@ -50,6 +50,7 @@ pkgs <- c(
   "GenomicRanges",
   "GenomicAlignments",
   "GenomicFeatures",
+  'tximport',
 
   # "SummarizedExperiment",
   # "VariantAnnotation",
