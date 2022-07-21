@@ -52,6 +52,8 @@ pkgs <- c(
   "GenomicFeatures",
   'tximport',
   'rhdf5',
+  'DESeq2',
+  'DESeq',
   # "SummarizedExperiment",
   # "VariantAnnotation",
   # "DelayedArray",
