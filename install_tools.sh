@@ -16,3 +16,19 @@ tar -xzf 2.7.10a.tar.gz
 cd STAR-2.7.10a/source
 make STAR
 ln -s /root/STAR-2.7.10a/source/STAR /usr/local/bin/STAR
+cd ..
+wget http://cole-trapnell-lab.github.io/cufflinks/assets/downloads/cufflinks-2.2.1.Linux_x86_64.tar.gz
+tar -xzf cufflinks-2.2.1.Linux_x86_64.tar.gz
+cd cufflinks-2.2.1.Linux_x86_64
+rm AUTHORS LICENSE README
+cp ./* /usr/local/bin/
+cd ..
+rm -rf cufflinks-2.2.1.Linux_x86_64
+wget https://gigenet.dl.sourceforge.net/project/bio-bwa/bwa-0.7.17.tar.bz2
+tar -xjvf bwa-0.7.17.tar.bz2
+cd bwa-0.7.17
+make
+cp bwa /usr/local/bin/
+cd ..
+rm -rf bwa-0.7.17
+
