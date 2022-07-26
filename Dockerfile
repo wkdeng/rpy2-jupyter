@@ -82,7 +82,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD5
     && apt-get autoremove \ 
     && bash /tmp/install_tools.sh \
     && rm -rf /var/lib/apt/lists/* 
-
+# RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN pip3 install --no-cache-dir scipy
 RUN pip3 install --no-cache-dir statistics
 RUN pip3 install --no-cache-dir statsmodels
@@ -94,6 +94,7 @@ RUN pip3 install --no-cache-dir matplotlib
 RUN pip3 install --no-cache-dir mappy
 RUN pip3 install --no-cache-dir cutadapt
 RUN pip3 install --no-cache-dir pyBigWig
+RUN pip3 install --no-cache-dir HTSeq
 RUN pip3 install --no-cache-dir pysam
 RUN pip3 install --no-cache-dir PyYAML
 RUN pip3 install --no-cache-dir numpy --upgrade --force-reinstall
