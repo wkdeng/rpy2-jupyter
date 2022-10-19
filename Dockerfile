@@ -97,6 +97,7 @@ RUN pip3 install --no-cache-dir pyBigWig
 RUN pip3 install --no-cache-dir HTSeq
 RUN pip3 install --no-cache-dir pysam
 RUN pip3 install --no-cache-dir PyYAML
+RUN pip3 install --no-cache-dir pyenchant
 RUN pip3 install --no-cache-dir numpy --upgrade --force-reinstall
 RUN pip3 install --no-cache-dir umap-learn
 RUN pip3 install --no-cache-dir jupyterthemes
