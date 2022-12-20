@@ -3,9 +3,11 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
 #SBATCH --mem=300G
-#SBATCH --time=720:00:00
-#SBATCH --output=/home/%u/scr/tmp/errout/jpt.job.%j
-#SBATCH --job-name=jpt_svr
+#SBATCH --gres=gpu:1
+#SBATCH -p gpuq
+#SBATCH --time=360:00:00
+#SBATCH --output=/home/%u/scr/tmp/errout/jpt_gpu.job.%j
+#SBATCH --job-name=jpt_gpu
 # customize --output path as appropriate (to a directory readable only by the user!)
 
 # Create temporary directory to be populated with directories to bind-mount in the container
@@ -44,7 +46,7 @@ When done using Server, terminate the job by:
       scancel -f ${SLURM_JOB_ID}
 END
 
-singularity exec --cleanenv ${HOME}/scr/software/docker_img/bioinfo_env_jpt_svr.sif \
+singularity exec --nv --cleanenv ${HOME}/scr/software/docker_img/bioinfo_env_jpt_svr.sif \
    jupyter notebook --ip=0.0.0.0 --no-browser --port=${PORT} --notebook-dir=/home/dengw1/scr/notebooks
 
 printf 'jupyter notebook exited' 1>&2
