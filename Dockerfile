@@ -106,6 +106,7 @@ RUN pip3 install --no-cache-dir torchvision
 RUN pip3 install --no-cache-dir tensorboard
 RUN pip3 install --no-cache-dir graphviz
 RUN pip3 install --no-cache-dir torchviz
+RUN pip3 install --no-cache-dir onnx
 RUN jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T 
 # RUN jupyter labextension install @jupyterlab/toc 
 RUN R -f /tmp/packages.R
