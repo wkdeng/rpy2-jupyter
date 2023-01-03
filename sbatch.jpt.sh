@@ -5,9 +5,10 @@
 #SBATCH --mem=300G
 #SBATCH --gres=gpu:1
 #SBATCH -p gpuq
-#SBATCH --time=360:00:00
+#SBATCH --time=120:00:00
 #SBATCH --output=/home/%u/scr/tmp/errout/jpt_gpu.job.%j
 #SBATCH --job-name=jpt_gpu
+
 # customize --output path as appropriate (to a directory readable only by the user!)
 
 # Create temporary directory to be populated with directories to bind-mount in the container
