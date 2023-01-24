@@ -119,7 +119,7 @@ suppressWarnings(BiocManager::install(update=TRUE, ask=FALSE))
 # without having to scroll up:
 warnings()
 IRkernel::installspec(user = FALSE)
-update.packages()
+update.packages(ask = FALSE)
 
 
 if (!is.null(warnings()))
