@@ -97,7 +97,7 @@ pkgs <- c(
   'Cooccur',
   'plyr',
   'networkD3',
-  # 'IRkernel'
+  'IRkernel'
 )
 
 install.packages('BiocManager')
@@ -118,8 +118,8 @@ suppressWarnings(BiocManager::install(update=TRUE, ask=FALSE))
 # just in case there were warnings, we want to see them
 # without having to scroll up:
 warnings()
-# IRkernel::installspec(user = FALSE)
-# update.packages(ask = FALSE)
+IRkernel::installspec(user = FALSE)
+update.packages(ask = FALSE)
 
 
 if (!is.null(warnings()))
