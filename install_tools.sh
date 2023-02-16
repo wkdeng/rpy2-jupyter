@@ -51,11 +51,11 @@ rm -rf bwa-0.7.17
 
 ## Modified from https://github.com/hisplan/docker-cellranger, using dropbox to avoid installation of scing
 
-download_url="https://www.dropbox.com/s/h9mmenub0a7fjun/cellranger-7.1.0.tar?dl=0"
+download_url="https://www.dropbox.com/s/h9mmenub0a7fjun/cellranger-7.1.0.tar"
 version="7.1.0"
 
 # cell ranger binaries
-curl -o cellranger-${version}.tar ${download_url} \
+wget cellranger-${version}.tar ${download_url} \
     && tar xf cellranger-${version}.tar \
     && rm -rf cellranger-${version}.tar \
     && mv cellranger-${version} /usr/local/bin/
