@@ -55,9 +55,9 @@ download_url="https://www.dropbox.com/s/h9mmenub0a7fjun/cellranger-7.1.0.tar?dl=
 version="7.1.0"
 
 # cell ranger binaries
-curl -o cellranger-${version}.tar.gz ${download_url} \
-    && tar xzf cellranger-${version}.tar.gz \
-    && rm -rf cellranger-${version}.tar.gz \
+curl -o cellranger-${version}.tar ${download_url} \
+    && tar xf cellranger-${version}.tar \
+    && rm -rf cellranger-${version}.tar \
     && mv cellranger-${version} /usr/local/bin/
 
 # V(D)J GRCh38 Reference - 7.0.0 (May 17, 2022)
