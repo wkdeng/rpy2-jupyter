@@ -51,7 +51,7 @@ version="7.0.0"
 # get scing
 git clone https://github.com/hisplan/scing.git
 cd scing
-pip install .
+python3 -m pip --no-cache-dir .
 cd ..
 
 # get download url for Cell Ranger
