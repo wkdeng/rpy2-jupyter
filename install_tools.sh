@@ -3,7 +3,7 @@
  # @email [dengwankun@hotmail.com]
  # @create date 2023-02-15 18:33:13
  # @modify date 2023-02-15 18:33:13
- # @desc [Installation of widely used tools through bash]
+ # @desc [Downloading and installation of widely used tools through bash]
 #############################
 
 # install homer
