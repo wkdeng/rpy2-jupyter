@@ -1,9 +1,9 @@
 ##############################
- # @author [Wankun Deng]
- # @email [dengwankun@hotmail.com]
- # @create date 2023-02-15 18:33:13
- # @modify date 2023-02-15 18:33:13
- # @desc [Downloading and installation of widely used tools through bash]
+# author [Wankun Deng]
+# email [dengwankun@hotmail.com]
+# create date 2023-02-15 18:33:13
+# modify date 2023-02-15 18:33:13
+# desc [Downloading and installation of widely used tools through bash]
 #############################
 
 # install homer
