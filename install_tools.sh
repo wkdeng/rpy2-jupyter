@@ -42,38 +42,10 @@ cd ..
 rm -rf bwa-0.7.17
 
 
-## Credit to Jaeyoung Chun (chunj@mskcc.org) https://github.com/hisplan/docker-cellranger
-
-# site_url="https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/7.0/"
+## Modified from https://github.com/hisplan/docker-cellranger, using dropbox to avoid installation of scing
 
 download_url="https://www.dropbox.com/s/h9mmenub0a7fjun/cellranger-7.1.0.tar?dl=0"
 version="7.1.0"
-
-
-# # get scing
-# pip3 install --force-reinstall -v "google-auth==2.16.0"
-# git clone https://github.com/hisplan/scing.git
-# cd scing
-# python3 setup.py install
-# cd ..
-
-# # get download url for Cell Ranger
-# if [ ! -n "$download_url" ]
-# then
-#     if [ ! -x "$(command -v scing)" ]
-#     then
-#         echo "Please install SCING CLI (https://github.com/hisplan/scing)."
-#         exit 1
-#     fi
-
-#     out=`scing --no-logo download --site-url ${site_url}`
-#     if [ $? != 0 ]
-#     then
-#         echo "$out"
-#         exit 1
-#     fi
-#     download_url=$out
-# fi
 
 # cell ranger binaries
 RUN curl -o cellranger-${version}.tar.gz ${download_url} \
