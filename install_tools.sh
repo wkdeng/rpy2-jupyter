@@ -55,19 +55,19 @@ download_url="https://www.dropbox.com/s/h9mmenub0a7fjun/cellranger-7.1.0.tar"
 version="7.1.0"
 
 # cell ranger binaries
-wget cellranger-${version}.tar ${download_url} \
+wget ${download_url} \
     && tar xf cellranger-${version}.tar \
     && rm -rf cellranger-${version}.tar \
     && mv cellranger-${version} /usr/local/bin/
 
 # V(D)J GRCh38 Reference - 7.0.0 (May 17, 2022)
-curl -O https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCh38-alts-ensembl-${version}.tar.gz \
+wget https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCh38-alts-ensembl-${version}.tar.gz \
     && tar xzf refdata-cellranger-vdj-GRCh38-alts-ensembl-${version}.tar.gz \
     && rm -rf refdata-cellranger-vdj-GRCh38-alts-ensembl-${version}.tar.gz \
     && mv refdata-cellranger-vdj-GRCh38-alts-ensembl-${version} /usr/local/bin/
 
 # V(D)J GRCm38 Reference - 7.0.0 (May 17, 2022)
-curl -O https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCm38-alts-ensembl-${version}.tar.gz \
+wget https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCm38-alts-ensembl-${version}.tar.gz \
     && tar xzf refdata-cellranger-vdj-GRCm38-alts-ensembl-${version}.tar.gz \
     && rm -rf refdata-cellranger-vdj-GRCm38-alts-ensembl-${version}.tar.gz \
     && mv refdata-cellranger-vdj-GRCm38-alts-ensembl-${version} /usr/local/bin/
