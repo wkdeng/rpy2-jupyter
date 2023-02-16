@@ -1,3 +1,11 @@
+##############################
+ # @author [Wankun Deng]
+ # @email [dengwankun@hotmail.com]
+ # @create date 2023-02-15 18:33:13
+ # @modify date 2023-02-15 18:33:13
+ # @desc [Installation of widely used tools through bash]
+#############################
+
 # install homer
 cd ~
 mkdir homer
@@ -49,6 +57,7 @@ download_url=""
 version="7.0.0"
 
 # get scing
+pip3 install --force-reinstall -v "google-auth==2.16.0"
 git clone https://github.com/hisplan/scing.git
 cd scing
 python3 setup.py install

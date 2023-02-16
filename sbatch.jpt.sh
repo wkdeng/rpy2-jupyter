@@ -1,4 +1,11 @@
 #!/bin/sh
+##############################
+ # @author [Wankun Deng]
+ # @email [dengwankun@hotmail.com]
+ # @create date 2023-02-15 18:35:44
+ # @modify date 2023-02-15 18:35:44
+ # @desc [description]
+#############################
 #SBATCH --signal=USR2
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32

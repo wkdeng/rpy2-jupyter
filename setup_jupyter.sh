@@ -1,3 +1,10 @@
+##############################
+ # @author [Wankun Deng]
+ # @email [dengwankun@hotmail.com]
+ # @create date 2023-02-15 18:36:12
+ # @modify date 2023-02-15 18:36:12
+ # @desc [description]
+#############################
 mkdir /home/"${NB_USER}"/work
 mkdir /home/"${NB_USER}"/.jupyter
 mkdir /home/"${NB_USER}"/.local
