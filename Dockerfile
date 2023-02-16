@@ -1,9 +1,9 @@
 ##############################
- # @author [Wankun Deng]
- # @email [dengwankun@hotmail.com]
- # @create date 2023-02-15 18:34:05
- # @modify date 2023-02-16 00:08:10
- # @desc [description]
+# author [Wankun Deng]
+# email [dengwankun@hotmail.com]
+# create date 2023-02-15 18:34:05
+# modify date 2023-02-16 00:23:54
+# desc [description]
 #############################
 # FROM ubuntu:jammy
 # LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"

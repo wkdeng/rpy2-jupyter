@@ -1,9 +1,9 @@
 ##############################
- # @author [Wankun Deng]
- # @email [dengwankun@hotmail.com]
- # @create date 2023-02-15 18:35:36
- # @modify date 2023-02-15 18:35:36
- # @desc [description]
+# author [Wankun Deng]
+# email [dengwankun@hotmail.com]
+# create date 2023-02-15 18:35:36
+# modify date 2023-02-15 18:35:36
+# desc [description]
 #############################
 scipy
 pyBigWig
