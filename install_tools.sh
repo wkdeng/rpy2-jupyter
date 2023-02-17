@@ -61,15 +61,3 @@ wget ${download_url} \
     && mv cellranger-${version} /usr/local/bin/
 
 ln -s /usr/local/bin/cellranger-${version}/bin/cellranger /usr/local/bin/STAR
-
-# V(D)J GRCh38 Reference - 7.0.0 (May 17, 2022)
-wget https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCh38-alts-ensembl-${version}.tar.gz \
-    && tar xzf refdata-cellranger-vdj-GRCh38-alts-ensembl-${version}.tar.gz \
-    && rm -rf refdata-cellranger-vdj-GRCh38-alts-ensembl-${version}.tar.gz \
-    && mv refdata-cellranger-vdj-GRCh38-alts-ensembl-${version} /usr/local/bin/
-
-# V(D)J GRCm38 Reference - 7.0.0 (May 17, 2022)
-wget https://cf.10xgenomics.com/supp/cell-vdj/refdata-cellranger-vdj-GRCm38-alts-ensembl-${version}.tar.gz \
-    && tar xzf refdata-cellranger-vdj-GRCm38-alts-ensembl-${version}.tar.gz \
-    && rm -rf refdata-cellranger-vdj-GRCm38-alts-ensembl-${version}.tar.gz \
-    && mv refdata-cellranger-vdj-GRCm38-alts-ensembl-${version} /usr/local/bin/
