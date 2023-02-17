@@ -57,4 +57,6 @@ END
 singularity exec --nv --cleanenv ${HOME}/scr/software/docker_img/bioinfo_env_jpt_svr.sif \
    jupyter notebook --ip=0.0.0.0 --no-browser --port=${PORT} --notebook-dir=/home/dengw1/scr/notebooks
 
+# docker run -p 8888:8888 -d --rm -e sirius123 -v /Users/wdeng3/CodeSpace:/Users/wdeng3/CodeSpace --platform linux/amd64 \
+# dengwankun/bioinfo_env:jpt_svr jupyter notebook --ip=0.0.0.0 --no-browser --port=8888 --notebook-dir=/Users/wdeng3/CodeSpace --allow-root
 printf 'jupyter notebook exited' 1>&2
