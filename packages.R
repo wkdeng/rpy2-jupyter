@@ -90,6 +90,8 @@ pkgs_to_install <- pkgs[pkgs %in% ap]
 
 BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
 # From github
+BiocManager::install('devtools', update=FALSE, ask=FALSE)
+
 devtools::install_github(repo = "kueckelj/confuns")
 devtools::install_github(repo = "theMILOlab/SPATA2")
 
