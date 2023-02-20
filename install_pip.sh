@@ -14,5 +14,10 @@ python3 -m pip --no-cache-dir install \
 	pandas \
 	pytest \
 	sphinx \
-	tzlocal
+	tzlocal \
+	mquad \
+	mgatk \
+	Scanpy \
+	cell2location[tutorials] \
+	cellphonedb
 rm -rf /root/.cache

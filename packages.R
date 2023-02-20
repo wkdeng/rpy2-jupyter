@@ -121,7 +121,8 @@ BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
 
 suppressWarnings(BiocManager::install(update=TRUE, ask=FALSE))
 # Remove tmp directory
-
+packageurl <- "https://cran.r-project.org/src/contrib/Archive/kohonen/kohonen_2.0.19.tar.gz"
+install.packages(packageurl, repos = NULL, type = "source")
 # just in case there were warnings, we want to see them
 # without having to scroll up:
 warnings()
