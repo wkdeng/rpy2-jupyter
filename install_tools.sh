@@ -60,4 +60,10 @@ wget ${download_url} \
     && rm -rf cellranger-${version}.tar \
     && mv cellranger-${version} /usr/local/bin/
 
-ln -s /usr/local/bin/cellranger-${version}/bin/cellranger /usr/local/bin/STAR
+ln -s /usr/local/bin/cellranger-${version}/bin/cellranger /usr/local/bin/cellranger
+
+git clone https://github.com/JiekaiLab/scTE.git
+cd scTE
+python3 setup.py install
+cd ..
+
