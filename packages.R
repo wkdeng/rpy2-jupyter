@@ -9,18 +9,9 @@
 pkgs <- c(
   'devtools',
   'ComplexHeatmap',
-  # tidyverse suite
   'tidyverse',
-  # 'multidplyr',
   'dplyr',
-  # 'dtplyr',
-  # 'dbplyr',
   'sparklyr',
-  'devtools',
-  # 'formatR',
-  # 'remotes',
-  # 'selectr',
-  # 'tidymodels',
   'tiff',
   "Rgraphviz",
   "rmarkdown",
@@ -31,28 +22,6 @@ pkgs <- c(
   'rlist',
   'WGCNA',
   'RUVSeq',
-  # "httr",
-  # "knitr",
-  # Bioconductor packages
-  # 'PCAtools',
-  # "clusterProfiler",
-  # "ReactomePA",
-  # "org.Hs.eg.db",
-  # "org.Mm.eg.db",
-  # "DOSE",
-  # "enrichplot",
-  # "msigdbr",
-  # "pathview",
-  # "ggnewscale",
-  # "BiocStyle",
-  # "OrganismDbi",
-  # "ExperimentHub",
-  # "Biobase",
-  # "BiocParallel",
-  # "biomaRt",
-  # "Biostrings",
-  # "BSgenome",
-  # "ShortRead",
   "IRanges",
   "GenomicRanges",
   "GenomicAlignments",
@@ -61,18 +30,7 @@ pkgs <- c(
   'rhdf5',
   'DESeq2',
   'DESeq',
-  # "SummarizedExperiment",
-  # "VariantAnnotation",
-  # "DelayedArray",
-  # 'ComplexHeatmap',
-  # "GSEABase",
-  # "Gviz",
-  # "graph",
-  # "RBGL",
-  # 'vsn',
-  # "polyester",
-  # "ffpe",
-  # "BatchQC",
+  'sf',
 
   # single cell
   'Seurat',
@@ -104,7 +62,23 @@ pkgs <- c(
   'Cooccur',
   'plyr',
   'networkD3',
-  'IRkernel'
+  'IRkernel',
+
+  ##
+  'BiocGenerics', 
+  'DelayedArray', 
+  'DelayedMatrixStats',
+  'limma', 
+  'lme4', 
+  'S4Vectors', 
+  'SingleCellExperiment',
+  'SummarizedExperiment', 
+  'batchelor', 
+  'HDF5Array',
+  'terra', 
+  'ggrastr',
+  'Matrix.utils',
+  'EBImage'
 )
 
 install.packages('BiocManager')
@@ -116,9 +90,12 @@ pkgs_to_install <- pkgs[pkgs %in% ap]
 
 BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
 # From github
-# devtools::install_github(repo = "TillF/ppso", upgrade = 'always', force = TRUE)
-# devtools::install_github('satijalab/seurat-data')
+devtools::install_github(repo = "kueckelj/confuns")
+devtools::install_github(repo = "theMILOlab/SPATA2")
 
+# if you want to use monocle3 related wrappers 
+devtools::install_github('cole-trapnell-lab/leidenbase')
+devtools::install_github('cole-trapnell-lab/monocle3')
 suppressWarnings(BiocManager::install(update=TRUE, ask=FALSE))
 # Remove tmp directory
 packageurl <- "https://cran.r-project.org/src/contrib/Archive/kohonen/kohonen_2.0.19.tar.gz"
