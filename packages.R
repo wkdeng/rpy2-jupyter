@@ -78,7 +78,10 @@ pkgs <- c(
   'terra', 
   'ggrastr',
   'Matrix.utils',
-  'EBImage'
+  'EBImage',
+  'seqinr',
+  'Matrix',
+  'Rsamtools'
 )
 
 install.packages('BiocManager')
@@ -92,6 +95,7 @@ BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
 # From github
 BiocManager::install('devtools', update=FALSE, ask=FALSE)
 
+devtools::install_github("lkmklsmn/MitoTrace")
 devtools::install_github(repo = "kueckelj/confuns")
 devtools::install_github(repo = "theMILOlab/SPATA2")
 

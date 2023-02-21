@@ -66,3 +66,9 @@ git clone https://github.com/JiekaiLab/scTE.git
 cd scTE
 python3 setup.py install
 cd ..
+
+
+apt-get install libharfbuzz-dev libfribidi-dev
+add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+apt-get update
+apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev libsqlite0-dev
