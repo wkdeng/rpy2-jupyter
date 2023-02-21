@@ -35,7 +35,9 @@ apt-get install -y \
 	graphviz \
 	r-base \
 	r-base-dev \
-	wget 
+	wget \
+	libharfbuzz-dev \
+	libfribidi-dev
 rm -rf /var/lib/apt/lists/*
 
 add-apt-repository ppa:ubuntugis/ubuntugis-unstable
