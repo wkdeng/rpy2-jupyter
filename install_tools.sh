@@ -67,8 +67,10 @@ cd scTE
 python3 setup.py install
 cd ..
 
+apt-get update -qq
+apt-get install -y libharfbuzz-dev libfribidi-dev
 
-apt-get install libharfbuzz-dev libfribidi-dev
+apt-get install -y software-properties-common
 add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 apt-get update
-apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev libsqlite0-dev
+apt-get install -y libudunits2-dev libgdal-dev libgeos-dev libproj-dev libsqlite0-dev
