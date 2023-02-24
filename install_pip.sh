@@ -15,9 +15,6 @@ python3 -m pip --no-cache-dir install \
 	pytest \
 	sphinx \
 	tzlocal \
-	mquad \
-	mgatk \
-	Scanpy \
-	cell2location[tutorials] \
-	cellphonedb
+	 \
+	 
 rm -rf /root/.cache
