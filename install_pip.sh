@@ -14,7 +14,5 @@ python3 -m pip --no-cache-dir install \
 	pandas \
 	pytest \
 	sphinx \
-	tzlocal \
-	 \
-	 
+	tzlocal 	 
 rm -rf /root/.cache
