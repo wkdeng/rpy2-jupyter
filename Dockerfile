@@ -118,7 +118,7 @@ RUN pip3 install --no-cache-dir onnx
 #Single Cell
 RUN pip3 install --no-cache-dir Scanpy
 RUN pip3 install --no-cache-dir cell2location
-RUN pip3 install --no-cache-dir cellphonedb
+# RUN pip3 install --no-cache-dir cellphonedb
 RUN pip3 install --no-cache-dir mgatk
 RUN pip3 install --no-cache-dir mquad
 RUN pip3 install --no-cache-dir -U vireoSNP
