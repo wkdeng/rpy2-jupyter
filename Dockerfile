@@ -114,7 +114,7 @@ RUN pip3 install --no-cache-dir tensorboard
 RUN pip3 install --no-cache-dir graphviz
 RUN pip3 install --no-cache-dir torchviz
 RUN pip3 install --no-cache-dir onnx
-
+RUN pip install git+https://github.com/snakemake/snakemake
 #Single Cell
 RUN pip3 install --no-cache-dir Scanpy
 RUN pip3 install --no-cache-dir cell2location

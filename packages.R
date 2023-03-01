@@ -81,7 +81,8 @@ pkgs <- c(
   'EBImage',
   'seqinr',
   'Matrix',
-  'Rsamtools'
+  'Rsamtools',
+  'Spaniel'
 )
 
 install.packages('BiocManager')
