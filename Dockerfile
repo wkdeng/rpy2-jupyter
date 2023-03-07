@@ -138,7 +138,7 @@
 # ###### Install required packages ######
 FROM dengwankun/bioinfo_env:jpt_svr
 LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
-COPY dependencies.sys requirements.txt packages.R install_tools.sh /tmp/
+COPY install_tools_additional.sh /tmp/
 ENV SHELL=/bin/bash
 USER root
 
