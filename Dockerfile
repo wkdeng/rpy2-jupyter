@@ -128,13 +128,6 @@
 # # RUN jupyter labextension install @jupyterlab/toc 
 # RUN R -f /tmp/packages.R
 
-# EXPOSE 8888
-
-# ENTRYPOINT ["/usr/local/bin/tini", "--"]
-# CMD ["/init"]
-
-
-
 # ###### Install required packages ######
 FROM dengwankun/bioinfo_env:jpt_svr
 LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
