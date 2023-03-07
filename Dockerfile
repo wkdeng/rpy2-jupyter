@@ -74,59 +74,77 @@
 
 
 # ###### Install required packages ######
-FROM dengwankun/bioinfo_env:jpt_base
+# FROM dengwankun/bioinfo_env:jpt_base
+# LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
+# COPY dependencies.sys requirements.txt packages.R install_tools.sh /tmp/
+# ENV SHELL=/bin/bash
+# USER root
+
+# RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 \
+#     && sed -i -e 's|disco|focal|g' /etc/apt/sources.list \
+#     && echo "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" >> /etc/apt/sources.list \
+#     && apt-get update -qq \
+#     && xargs apt-get -y --no-install-recommends install < /tmp/dependencies.sys \
+#     && apt-get clean \
+#     && apt-get autoremove \ 
+#     && bash /tmp/install_tools.sh \
+#     && rm -rf /var/lib/apt/lists/* 
+# # RUN ln -s /usr/bin/python3 /usr/bin/python
+# RUN pip3 install --no-cache-dir scipy
+# RUN pip3 install --no-cache-dir statistics
+# RUN pip3 install --no-cache-dir statsmodels
+# RUN pip3 install --no-cache-dir pybedtools
+# RUN pip3 install --no-cache-dir sklearn
+# RUN pip3 install --no-cache-dir scikit-learn
+# RUN pip3 install --no-cache-dir snakemake
+# RUN pip3 install --no-cache-dir matplotlib
+# RUN pip3 install --no-cache-dir mappy
+# RUN pip3 install --no-cache-dir cutadapt
+# RUN pip3 install --no-cache-dir pyBigWig
+# RUN pip3 install --no-cache-dir HTSeq
+# RUN pip3 install --no-cache-dir pysam
+# RUN pip3 install --no-cache-dir PyYAML
+# RUN pip3 install --no-cache-dir pyenchant
+# RUN pip3 install --no-cache-dir numpy --upgrade --force-reinstall
+# RUN pip3 install --no-cache-dir umap-learn
+# RUN pip3 install --no-cache-dir jupyterthemes
+# RUN pip3 install --no-cache-dir torch
+# RUN pip3 install --no-cache-dir torchvision
+# RUN pip3 install --no-cache-dir tensorboard
+# RUN pip3 install --no-cache-dir graphviz
+# RUN pip3 install --no-cache-dir torchviz
+# RUN pip3 install --no-cache-dir onnx
+# RUN pip install git+https://github.com/snakemake/snakemake
+# #Single Cell
+# RUN pip3 install --no-cache-dir Scanpy
+# RUN pip3 install --no-cache-dir cell2location
+# # RUN pip3 install --no-cache-dir cellphonedb
+# RUN pip3 install --no-cache-dir mgatk
+# RUN pip3 install --no-cache-dir mquad
+# RUN pip3 install --no-cache-dir -U vireoSNP
+# RUN pip3 install --no-cache-dir -U cellSNP
+
+# RUN jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T 
+# # RUN jupyter labextension install @jupyterlab/toc 
+# RUN R -f /tmp/packages.R
+
+# EXPOSE 8888
+
+# ENTRYPOINT ["/usr/local/bin/tini", "--"]
+# CMD ["/init"]
+
+
+
+# ###### Install required packages ######
+FROM dengwankun/bioinfo_env:jpt_svr
 LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
 COPY dependencies.sys requirements.txt packages.R install_tools.sh /tmp/
 ENV SHELL=/bin/bash
 USER root
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 \
-    && sed -i -e 's|disco|focal|g' /etc/apt/sources.list \
-    && echo "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" >> /etc/apt/sources.list \
-    && apt-get update -qq \
-    && xargs apt-get -y --no-install-recommends install < /tmp/dependencies.sys \
-    && apt-get clean \
-    && apt-get autoremove \ 
-    && bash /tmp/install_tools.sh \
+RUN bash /tmp/install_tools_additional.sh \
     && rm -rf /var/lib/apt/lists/* 
-# RUN ln -s /usr/bin/python3 /usr/bin/python
-RUN pip3 install --no-cache-dir scipy
-RUN pip3 install --no-cache-dir statistics
-RUN pip3 install --no-cache-dir statsmodels
-RUN pip3 install --no-cache-dir pybedtools
-RUN pip3 install --no-cache-dir sklearn
-RUN pip3 install --no-cache-dir scikit-learn
-RUN pip3 install --no-cache-dir snakemake
-RUN pip3 install --no-cache-dir matplotlib
-RUN pip3 install --no-cache-dir mappy
-RUN pip3 install --no-cache-dir cutadapt
-RUN pip3 install --no-cache-dir pyBigWig
-RUN pip3 install --no-cache-dir HTSeq
-RUN pip3 install --no-cache-dir pysam
-RUN pip3 install --no-cache-dir PyYAML
-RUN pip3 install --no-cache-dir pyenchant
-RUN pip3 install --no-cache-dir numpy --upgrade --force-reinstall
-RUN pip3 install --no-cache-dir umap-learn
-RUN pip3 install --no-cache-dir jupyterthemes
-RUN pip3 install --no-cache-dir torch
-RUN pip3 install --no-cache-dir torchvision
-RUN pip3 install --no-cache-dir tensorboard
-RUN pip3 install --no-cache-dir graphviz
-RUN pip3 install --no-cache-dir torchviz
-RUN pip3 install --no-cache-dir onnx
-RUN pip install git+https://github.com/snakemake/snakemake
-#Single Cell
-RUN pip3 install --no-cache-dir Scanpy
-RUN pip3 install --no-cache-dir cell2location
-# RUN pip3 install --no-cache-dir cellphonedb
-RUN pip3 install --no-cache-dir mgatk
-RUN pip3 install --no-cache-dir mquad
-RUN pip3 install --no-cache-dir -U vireoSNP
-RUN pip3 install --no-cache-dir -U cellSNP
 
-RUN jt -t monokai -f fira -fs 10 -nf ptsans -nfs 11 -N -kl -cursw 2 -cursc r -cellw 95% -T 
-# RUN jupyter labextension install @jupyterlab/toc 
-RUN R -f /tmp/packages.R
 
 EXPOSE 8888
 
