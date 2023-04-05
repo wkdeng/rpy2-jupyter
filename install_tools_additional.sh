@@ -13,3 +13,6 @@ tar -xzvf sratoolkit.3.0.2-ubuntu64.tar.gz
 cd sratoolkit.3.0.2-ubuntu64/bin
 echo 'export PATH=$(pwd):\$PATH'
 cd ~
+
+apt-get update -qq
+apt-get install -y screen
