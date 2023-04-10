@@ -9,7 +9,6 @@
 pkgs <- c(
   'HGNChelper',
   'openxlsx'
-
 )
 
 install.packages('BiocManager')
@@ -20,6 +19,8 @@ ap <- rownames(ap.db)
 pkgs_to_install <- pkgs[pkgs %in% ap]
 
 BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
+devtools::install_github(repo = "theMILOlab/SPATA2")
+devtools::install_github('cole-trapnell-lab/monocle3')
 
 if (!is.null(warnings()))
 {

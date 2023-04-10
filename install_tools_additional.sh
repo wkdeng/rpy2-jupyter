@@ -16,3 +16,7 @@ cd ~
 
 apt-get update -qq
 apt-get install -y screen
+
+add-apt-repository -y ppa:cran/imagemagick
+apt-get update -qq
+apt-get install -y libmagick++-dev
