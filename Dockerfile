@@ -131,13 +131,14 @@
 # ###### Install required packages ######
 FROM dengwankun/bioinfo_env:jpt_svr
 LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
-COPY install_tools_additional.sh /tmp/
+COPY install_tools_additional.sh packages_additional.R /tmp/
 ENV SHELL=/bin/bash
 USER root
 
 RUN bash /tmp/install_tools_additional.sh \
     && rm -rf /var/lib/apt/lists/* 
 
+RUN R -f /tmp/packages_additional.R
 
 EXPOSE 8888
 
