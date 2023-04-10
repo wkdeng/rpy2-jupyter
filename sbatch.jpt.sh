@@ -57,6 +57,7 @@ END
 # singularity exec --nv --cleanenv ${HOME}/scr/software/docker_img/bioinfo_env_jpt_svr.sif \
 #    jupyter notebook --ip=0.0.0.0 --no-browser --port=${PORT} --notebook-dir=/home/dengw1/scr/notebooks
 
-docker run -p 8888:8888 -d --rm -v /home/wdeng3/workspace:/home/wdeng3/workspace -v /data2/:/data2 --platform linux/amd64 \
-dengwankun/bioinfo_env:jpt_svr jupyter notebook --ip=0.0.0.0 --no-browser --port=8888 --notebook-dir=/home/wdeng3/workspace/Codespace --allow-root --NotebookApp.token='sirius123'
+docker run --name jptsvr -p 8888:8888 -d --rm -v /home/wdeng3/workspace:/home/wdeng3/workspace -v /data2/:/data2 --platform linux/amd64 \
+dengwankun/bioinfo_env:jpt_svr2 jupyter notebook --ip=0.0.0.0 --no-browser --port=8888 --notebook-dir=/home/wdeng3/workspace/Codespace --allow-root --NotebookApp.token='sirius123'
+
 printf 'jupyter notebook exited' 1>&2
