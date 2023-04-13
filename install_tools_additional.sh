@@ -20,3 +20,7 @@ apt-get install -y screen
 add-apt-repository -y ppa:cran/imagemagick
 apt-get update -qq
 apt-get install -y libmagick++-dev
+
+add-apt-repository ppa:dns/gnu
+apt-get update -qq
+apt install -y libgsl-dev
