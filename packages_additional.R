@@ -23,6 +23,8 @@ BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
 devtools::install_github(repo = "theMILOlab/SPATA2")
 devtools::install_github('cole-trapnell-lab/monocle3')
 devtools::install_github("dmcable/spacexr", build_vignettes = FALSE)
+devtools::install_github('YingMa0107/CARD')
+devtools::install_github('xuranw/MuSiC')
 
 if (!is.null(warnings()))
 {
