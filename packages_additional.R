@@ -26,6 +26,8 @@ devtools::install_github("dmcable/spacexr", build_vignettes = FALSE)
 devtools::install_github('YingMa0107/CARD')
 devtools::install_github('xuranw/MuSiC')
 
+BiocManager::install(version='devel')
+BiocManager::install("TOAST")
 if (!is.null(warnings()))
 {
   w <- capture.output(warnings())
