@@ -9,7 +9,8 @@
 pkgs <- c(
   'HGNChelper',
   'openxlsx',
-  'spacexr'
+  'spacexr',
+  'zinbwave'
 )
 
 install.packages('BiocManager')
