@@ -14,7 +14,7 @@ pkgs <- c(
 )
 
 install.packages('BiocManager')
-
+ 
 pkgs <- unique(pkgs)
 ap.db <- available.packages(contrib.url(BiocManager::repositories()))
 ap <- rownames(ap.db)
