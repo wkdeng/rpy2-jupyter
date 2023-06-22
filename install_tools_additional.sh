@@ -11,7 +11,7 @@ cd ~
 wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.2/sratoolkit.3.0.2-ubuntu64.tar.gz
 tar -xzvf sratoolkit.3.0.2-ubuntu64.tar.gz
 cd sratoolkit.3.0.2-ubuntu64/bin
-echo 'export PATH=$(pwd):\$PATH'
+echo 'export PATH=$(pwd):\$PATH' >> ~/.bashrc
 cd ~
 
 apt-get update -qq
@@ -24,3 +24,9 @@ apt-get install -y libmagick++-dev
 add-apt-repository ppa:dns/gnu
 apt-get update -qq
 apt install -y libgsl-dev
+
+pip install scvi-tools
+
+git clone https://github.com/KrishnaswamyLab/SAUCIE
+pip install -r SAUCIE/requirements.txt
+pip install scglue
