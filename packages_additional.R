@@ -2,7 +2,7 @@
  # @author [Wankun Deng]
  # @email [dengwankun@gmail.com]
  # @create date 2023-04-10 10:22:42
- # @modify date 2023-06-22 14:50:09
+ # @modify date 2023-06-23 13:56:11
  # @desc [description]
 ###
 
@@ -29,6 +29,7 @@
 # devtools::install_github('xuranw/MuSiC')
 
 # install.packages("devtools")
+BiocManager::install('clustermole')
 devtools::install_version("crossmatch", version = "1.3.1", repos = "http://cran.us.r-project.org")
 devtools::install_version("multicross", version = "2.1.0", repos = "http://cran.us.r-project.org")
 devtools::install_github("jackbibby1/SCPA")
