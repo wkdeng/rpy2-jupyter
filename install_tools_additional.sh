@@ -11,7 +11,7 @@ cd ~
 wget https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/3.0.2/sratoolkit.3.0.2-ubuntu64.tar.gz
 tar -xzvf sratoolkit.3.0.2-ubuntu64.tar.gz
 cd sratoolkit.3.0.2-ubuntu64/bin
-echo 'export PATH=$(pwd):\$PATH' >> ~/.bashrc
+echo 'export PATH=/root/sratoolkit.3.0.2-ubuntu64/bin:$PATH' >> ~/.bashrc
 cd ~
 
 apt-get update -qq

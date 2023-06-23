@@ -32,6 +32,8 @@
 devtools::install_version("crossmatch", version = "1.3.1", repos = "http://cran.us.r-project.org")
 devtools::install_version("multicross", version = "2.1.0", repos = "http://cran.us.r-project.org")
 devtools::install_github("jackbibby1/SCPA")
+devtools::install_github('satijalab/seurat-data')
+remotes::install_github("mojaveazure/seurat-disk")
 
 if (!is.null(warnings()))
 {
