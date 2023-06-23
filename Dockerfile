@@ -129,7 +129,7 @@
 # RUN R -f /tmp/packages.R
 
 # ###### Install required packages ######
-FROM dengwankun/bioinfo_env:jpt_svr
+FROM dengwankun/bioinfo_env:jpt_svr2
 LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
 COPY install_tools_additional.sh packages_additional.R /tmp/
 ENV SHELL=/bin/bash
