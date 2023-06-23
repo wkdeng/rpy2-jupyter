@@ -26,7 +26,9 @@ apt-get update -qq
 apt install -y libgsl-dev
 
 pip install scvi-tools
+pip install scvi-colab
 
 git clone https://github.com/KrishnaswamyLab/SAUCIE
 pip install -r SAUCIE/requirements.txt
 pip install scglue
+pip install muon
