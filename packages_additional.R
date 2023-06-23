@@ -35,6 +35,8 @@ devtools::install_version("multicross", version = "2.1.0", repos = "http://cran.
 devtools::install_github("jackbibby1/SCPA")
 devtools::install_github('satijalab/seurat-data')
 remotes::install_github("mojaveazure/seurat-disk")
+remotes::install_github("dynverse/dyno")
+
 
 if (!is.null(warnings()))
 {
