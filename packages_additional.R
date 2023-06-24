@@ -29,7 +29,7 @@
 # devtools::install_github('xuranw/MuSiC')
 
 # install.packages("devtools")
-BiocManager::install('clustermole')
+BiocManager::install('clustermole', update=FALSE, ask=FALSE)
 devtools::install_version("crossmatch", version = "1.3.1", repos = "http://cran.us.r-project.org")
 devtools::install_version("multicross", version = "2.1.0", repos = "http://cran.us.r-project.org")
 devtools::install_github("jackbibby1/SCPA")

@@ -61,7 +61,7 @@ docker run --name jptsvr -p 9999:8888 -d --rm -v /home/wdeng3/workspace:/home/wd
 dengwankun/bioinfo_env:jpt_svr3 jupyter notebook --ip=0.0.0.0 --no-browser --port=8888 --notebook-dir=/home/wdeng3/workspace/Codespace --allow-root --NotebookApp.token='sirius123'
 
 
-docker run --name jptsvr2 -p 2222:8888 -d --rm -v ~/Codespace:/home/wdeng3/Codespace --platform linux/amd64 \
-dengwankun/bioinfo_env:jpt_svr2 jupyter notebook --ip=0.0.0.0 --no-browser --port=8888 --notebook-dir=/home/wdeng3/Codespace --allow-root --NotebookApp.token='sirius123'
+docker run --name jptsvr -p 1111:8888 -d --rm -v ~/Codespace:/home/wdeng3/Codespace --platform linux/amd64 \
+dengwankun/bioinfo_env:jpt_svr3 jupyter notebook --ip=0.0.0.0 --no-browser --port=8888 --notebook-dir=/home/wdeng3/Codespace --allow-root --NotebookApp.token='sirius123'
 
 printf 'jupyter notebook exited' 1>&2

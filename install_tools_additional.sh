@@ -30,5 +30,6 @@ pip install scvi-colab
 
 git clone https://github.com/KrishnaswamyLab/SAUCIE
 pip install -r SAUCIE/requirements.txt
-pip install scglue
-pip install muon
+pip install --no-cache-dir scglue
+pip install --no-cache-dir muon
+pip install --no-cache-dir scvelo
