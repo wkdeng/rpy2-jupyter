@@ -27,6 +27,8 @@ apt install -y libgsl-dev
 
 pip install scvi-tools
 pip install scvi-colab
+pip install --no-cache-dir cython
+pip install --no-cache-dir velocyto
 
 git clone https://github.com/KrishnaswamyLab/SAUCIE
 pip install -r SAUCIE/requirements.txt
