@@ -2,7 +2,7 @@
  # @author [Wankun Deng]
  # @email [dengwankun@gmail.com]
  # @create date 2023-04-10 10:22:42
- # @modify date 2023-06-23 13:56:11
+ # @modify date 2023-10-20 15:28:05
  # @desc [description]
 ###
 
@@ -36,6 +36,9 @@ devtools::install_github("jackbibby1/SCPA")
 devtools::install_github('satijalab/seurat-data')
 remotes::install_github("mojaveazure/seurat-disk")
 remotes::install_github("dynverse/dyno")
+devtools::install_github("YiPeng-Gao/scDaPars")
+BiocManager::install('derfinder')
+devtools::install_github("BMILAB/scAPAtrap")
 
 
 if (!is.null(warnings()))
