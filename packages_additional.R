@@ -2,7 +2,7 @@
  # @author [Wankun Deng]
  # @email [dengwankun@gmail.com]
  # @create date 2023-04-10 10:22:42
- # @modify date 2023-10-27 14:38:39
+ # @modify date 2023-10-27 15:13:04
  # @desc [description]
 ###
 
@@ -29,16 +29,23 @@
 # devtools::install_github('xuranw/MuSiC')
 
 # install.packages("devtools")
+
+## cran server outage, use github instead date: 2023-10-27
 # BiocManager::install('clustermole', update=FALSE, ask=FALSE)
+# devtools::install_version("crossmatch", version = "1.3.1", repos = "http://cran.us.r-project.org")
+# devtools::install_version("multicross", version = "2.1.0", repos = "http://cran.us.r-project.org")
+
 devtools::install_github("igordot/clustermole")
-devtools::install_version("crossmatch", version = "1.3.1", repos = "http://cran.us.r-project.org")
-devtools::install_version("multicross", version = "2.1.0", repos = "http://cran.us.r-project.org")
+devtools::install_github("cran/crossmatch")
+devtools::install_github("cran/multicross")
+
 devtools::install_github("jackbibby1/SCPA")
 devtools::install_github('satijalab/seurat-data')
 remotes::install_github("mojaveazure/seurat-disk")
 remotes::install_github("dynverse/dyno")
 devtools::install_github("YiPeng-Gao/scDaPars")
-BiocManager::install('derfinder')
+# BiocManager::install('derfinder')
+devtools::install_github("lcolladotor/derfinder")
 devtools::install_github("BMILAB/scAPAtrap")
 
 
