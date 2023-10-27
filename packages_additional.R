@@ -6,6 +6,7 @@
  # @desc [description]
 ###
 
+
 # pkgs <- c(
 #   'HGNChelper',
 #   'openxlsx',
@@ -36,10 +37,10 @@
 # devtools::install_version("multicross", version = "2.1.0", repos = "http://cran.us.r-project.org")
 
 devtools::install_github("igordot/clustermole")
-devtools::install_github("cran/crossmatch")
-devtools::install_github("cran/multicross")
+# devtools::install_github("cran/crossmatch")
+# devtools::install_github("cran/multicross")
 
-devtools::install_github("jackbibby1/SCPA")
+# devtools::install_github("jackbibby1/SCPA")
 devtools::install_github('satijalab/seurat-data')
 remotes::install_github("mojaveazure/seurat-disk")
 remotes::install_github("dynverse/dyno")

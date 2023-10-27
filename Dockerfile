@@ -135,7 +135,9 @@ COPY install_tools_additional.sh packages_additional.R /tmp/
 ENV SHELL=/bin/bash
 USER root
 
-RUN bash /tmp/install_tools_additional.sh \
+# echo 'GITHUB_PAT=xxxxxxxxxx' >~/.Renviron \
+
+RUN  bash /tmp/install_tools_additional.sh \
     && rm -rf /var/lib/apt/lists/* 
 
 RUN R -f /tmp/packages_additional.R
