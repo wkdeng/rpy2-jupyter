@@ -14,6 +14,25 @@ cd sratoolkit.3.0.2-ubuntu64/bin
 echo 'export PATH=/root/sratoolkit.3.0.2-ubuntu64/bin:$PATH' >> ~/.bashrc
 cd ~
 
+# install plink
+wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20231018.zip
+mkdir plink
+mv plink_linux_x86_64_20231018.zip plink/
+cd plink 
+unzip plink_linux_x86_64_20231018.zip
+echo 'export PATH=/root/plink:$PATH' >> ~/.bashrc
+cd ~
+
+# picard
+wget https://github.com/broadinstitute/picard/releases/download/2.27.5/picard.jar 
+
+mkdir bin
+cd bin
+wget https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/liftOver
+chmod +x liftOver
+echo 'export PATH=/root/bin:$PATH' >> ~/.bashrc
+cd ~
+
 # install DaPars2
 git clone https://github.com/3UTR/DaPars2.git
 echo "alias DaPars2_Multi_Sample_Multi_Chr='python3 /root/DaPars2/src/DaPars2_Multi_Sample_Multi_Chr.py '">> ~/.bashrc

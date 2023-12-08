@@ -2,7 +2,7 @@
  # @author [Wankun Deng]
  # @email [dengwankun@gmail.com]
  # @create date 2023-04-10 10:22:42
- # @modify date 2023-10-27 15:13:04
+ # @modify date 2023-11-20 11:11:19
  # @desc [description]
 ###
 
@@ -47,8 +47,19 @@ remotes::install_github("dynverse/dyno")
 devtools::install_github("YiPeng-Gao/scDaPars")
 # BiocManager::install('derfinder')
 devtools::install_github("lcolladotor/derfinder")
+devtools::install_github('bernatgel/regioneR')
 devtools::install_github("BMILAB/scAPAtrap")
 
+BiocManager::install("BSgenome",ask=F,update=F)
+BiocManager::install("RBGL",ask=F,update=F)
+BiocManager::install("OrganismDbi",ask=F,update=F)
+BiocManager::install("ggbio",ask=F,update=F)
+devtools::install_github("BMILAB/movAPA")
+BiocManager::install('BSgenome.Hsapiens.UCSC.hg38',ask=F,update=F)
+BiocManager::install('TxDb.Hsapiens.UCSC.hg38.knownGene',ask=F,update=F)
+BiocManager::install('motifStack',ask=F,update=F)
+BiocManager::install('bamsignals',ask=F,update=F)
+devtools::install_github("BMILAB/vizAPA")
 
 if (!is.null(warnings()))
 {
