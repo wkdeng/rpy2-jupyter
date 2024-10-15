@@ -58,6 +58,7 @@ apt install -y libgsl-dev
 pip install scvi-tools
 pip install scvi-colab
 pip install --no-cache-dir cython
+pip install --no-cache-dir Cython
 pip install --no-cache-dir velocyto
 
 git clone https://github.com/KrishnaswamyLab/SAUCIE
@@ -66,3 +67,47 @@ pip install --no-cache-dir scglue
 pip install --no-cache-dir muon
 pip install --no-cache-dir scvelo
 pip install --no-cache-dir umi_tools
+pip install --no-cache-dir pysam
+
+
+## move app folder to /usr/bin, pay attention to two beagle version was needed, do not overwrite samtools, bcftools, vcftools
+git clone https://github.com/KChen-lab/Monopogen.git
+cd Monopogen
+pip install -e .
+echo "alias Monopogen='python3 /root/Monopogen/src/monopogen.py'">> ~/.bashrc
+source ~/.bashrc
+cd apps
+wget https://faculty.washington.edu/browning/beagle/beagle.08Feb22.fa4.jar
+chmod +x ./*
+cp bgzip /usr/bin/
+cp picard.jar /usr/bin/
+cp tabix /usr/bin/
+cp beagle.27Jul16.86a.jar /usr/bin/
+cp beagle.08Feb22.fa4.jar /usr/bin/
+cd ~
+
+
+## install conda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh -b
+echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+## install SANGO
+conda create -n SANGO -y python=3.8
+conda init
+bash
+conda activate SANGO
+git clone https://github.com/cquzys/SANGO.git
+cd SANGO
+pip install -r requirements.txt
+pip install torch_geometric
+pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-1.13.1+cu117.html
+
+
+# ## install Cellcano
+# pip install Cython
+# pip install pkgconfig
+# git clone https://github.com/marvinquiet/Cellcano.git
+# cd Cellcano
