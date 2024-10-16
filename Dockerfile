@@ -21,8 +21,8 @@ COPY install_apt.sh /opt/
 COPY install_rpacks.sh /opt/
 COPY install_pip.sh /opt/
 
-RUN \
-    cd /root \
+RUN bash /opt/install_apt.sh \
+    && cd /root \
     && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
     && ./Miniconda3-latest-Linux-x86_64.sh -b \
@@ -31,8 +31,7 @@ RUN \
     && conda init
 
 RUN \
-    bash /opt/install_apt.sh \
-    && bash /opt/install_rpacks.sh \
+    bash /opt/install_rpacks.sh \
     && bash /opt/install_pip.sh \
     && rm -rf /tmp/* \
     && apt-get remove --purge -y $BUILDDEPS \
