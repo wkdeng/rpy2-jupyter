@@ -1,8 +1,6 @@
 openjdk-11-jdk
 hmmer
-bcftools
 bedtools
-samtools
 ncbi-blast+
 fastqc
 vcftools

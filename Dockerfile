@@ -21,17 +21,54 @@ COPY install_apt.sh /opt/
 COPY install_rpacks.sh /opt/
 COPY install_pip.sh /opt/
 
-RUN bash /opt/install_apt.sh 
-RUN cd /root \
-    && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
-    # && chmod +x Miniconda3-latest-Linux-x86_64.sh \
-    # && ./Miniconda3-latest-Linux-x86_64.sh -b \
-    # && echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
-    # && source ~/.bashrc \
-    # && conda init
+RUN \
+    apt-get update -qq \
+    && apt-get install -y wget
 
 RUN \
-    bash /opt/install_rpacks.sh \
+    cd /root \
+    && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    && chmod +x Miniconda3-latest-Linux-x86_64.sh \
+    && ./Miniconda3-latest-Linux-x86_64.sh -b \
+    && echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
+    && source ~/.bashrc \
+    && conda init
+RUN \
+    conda install pip
+RUN \
+    cd /root \
+    && wget https://github.com/samtools/htslib/releases/download/1.21/htslib-1.21.tar.bz2 \
+    && tar -xvf htslib-1.21.tar.bz2 \
+    && cd htslib-1.21 \
+    && ./configure \
+    && make \
+    && make install \
+    && ln -s /usr/local/bin/tabix /usr/bin/tabix \
+    && ln -s /usr/local/bin/bgzip /usr/bin/bgzip
+
+RUN \
+    cd /root \
+    && wget https://github.com/samtools/samtools/releases/download/1.21/samtools-1.21.tar.bz2 \
+    && tar -xvf samtools-1.21.tar.bz2 \
+    && cd samtools-1.21 \
+    && ./configure \
+    && make \
+    && make install \
+    && ln -s /usr/local/bin/samtools /usr/bin/samtools
+
+RUN \
+    cd /root \
+    && wget https://github.com/samtools/bcftools/releases/download/1.21/bcftools-1.21.tar.bz2 \
+    && tar -xvf bcftools-1.21.tar.bz2 \
+    && cd bcftools-1.21 \
+    && ./configure \
+    && make \
+    && make install \
+    && ln -s /usr/local/bin/bcftools /usr/bin/bcftools
+
+RUN \
+    bash /opt/install_apt.sh \
+    && bash /opt/install_rpacks.sh \
     && bash /opt/install_pip.sh \
     && rm -rf /tmp/* \
     && apt-get remove --purge -y $BUILDDEPS \

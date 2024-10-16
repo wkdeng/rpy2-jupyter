@@ -33,8 +33,7 @@ apt-get install -y \
 	libxml2-dev \
 	graphviz \
 	r-base \
-	r-base-dev \
-	wget 
+	r-base-dev 
 rm -rf /var/lib/apt/lists/*
 
 	# python3 \
