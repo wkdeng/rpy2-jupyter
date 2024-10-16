@@ -36,12 +36,10 @@ RUN \
     cd /root \
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
     && ./Miniconda3-latest-Linux-x86_64.sh -b 
-RUN \
-    echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
-    && source ~/.bashrc \
-    && conda init
-RUN \
-    conda install -y pip
+RUN echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc 
+RUN source ~/.bashrc 
+RUN conda init
+RUN conda install -y pip
 
 RUN \
     bash /opt/install_apt.sh \
