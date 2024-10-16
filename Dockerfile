@@ -13,7 +13,8 @@ LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
 ARG DEBIAN_FRONTEND=noninteractive
 ENV CRAN_MIRROR=https://cloud.r-project.org \
     CRAN_MIRROR_TAG=-cran40 \
-    DEBIAN_FRONTEND=noninteractive
+    DEBIAN_FRONTEND=noninteractive \
+    SHELL=/bin/bash
 
 
 ARG RPY2_VERSION=RELEASE_3_5_1
