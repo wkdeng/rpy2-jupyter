@@ -12,7 +12,9 @@ LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
 # ###### Install rpy2 (Modified from: github.com/rpy2/rpy2-docker) ######
 ARG DEBIAN_FRONTEND=noninteractive
 ENV CRAN_MIRROR=https://cloud.r-project.org \
-    CRAN_MIRROR_TAG=-cran40
+    CRAN_MIRROR_TAG=-cran40 \
+    DEBIAN_FRONTEND=noninteractive
+
 
 ARG RPY2_VERSION=RELEASE_3_5_1
 ARG RPY2_CFFI_MODE=BOTH
@@ -34,7 +36,20 @@ RUN \
     && source ~/.bashrc \
     && conda init
 RUN \
-    conda install pip
+    conda install -y pip
+
+RUN \
+    bash /opt/install_apt.sh \
+    && bash /opt/install_rpacks.sh \
+    && bash /opt/install_pip.sh \
+    && rm -rf /tmp/* \
+    && apt-get remove --purge -y $BUILDDEPS \
+    && apt-get autoremove -y \
+    && apt-get autoclean -y \
+    && rm -rf /var/lib/apt/lists/* \
+    && python3 -m pip --no-cache-dir install https://github.com/rpy2/rpy2/archive/"${RPY2_VERSION}".zip \
+    && rm -rf /root/.cache
+
 RUN \
     cd /root \
     && wget https://github.com/samtools/htslib/releases/download/1.21/htslib-1.21.tar.bz2 \
@@ -65,19 +80,6 @@ RUN \
     && make \
     && make install \
     && ln -s /usr/local/bin/bcftools /usr/bin/bcftools
-
-RUN \
-    bash /opt/install_apt.sh \
-    && bash /opt/install_rpacks.sh \
-    && bash /opt/install_pip.sh \
-    && rm -rf /tmp/* \
-    && apt-get remove --purge -y $BUILDDEPS \
-    && apt-get autoremove -y \
-    && apt-get autoclean -y \
-    && rm -rf /var/lib/apt/lists/* \
-    && python3 -m pip --no-cache-dir install https://github.com/rpy2/rpy2/archive/"${RPY2_VERSION}".zip \
-    && rm -rf /root/.cache
-
 
 # # ###### Install Jupyter (Modified from: github.com/rpy2/rpy2-docker) ######
 # # FROM dengwankun/bioinfo_env:rpy2_base
