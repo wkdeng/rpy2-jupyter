@@ -36,7 +36,8 @@ RUN \
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
     && ./Miniconda3-latest-Linux-x86_64.sh -b 
 RUN \
-    echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
+    bash \
+    && echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
     && source ~/.bashrc \
     && conda init
 RUN \
