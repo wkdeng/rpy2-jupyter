@@ -38,7 +38,6 @@ RUN \
 RUN \
     bash \
     && echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
-    && source ~/.bashrc \
     && conda init
 RUN \
     conda install -y pip
