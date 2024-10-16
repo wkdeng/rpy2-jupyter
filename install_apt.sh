@@ -31,11 +31,13 @@ apt-get install -y \
 	libcairo-dev \
 	libedit-dev \
 	libxml2-dev \
-	python3 \
-	python3-pip \
-	python3-venv \
 	graphviz \
 	r-base \
 	r-base-dev \
 	wget 
 rm -rf /var/lib/apt/lists/*
+
+	# python3 \
+	# python3-pip \
+	# python3-venv \
+
