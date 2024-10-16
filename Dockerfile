@@ -16,7 +16,7 @@ ENV CRAN_MIRROR=https://cloud.r-project.org \
     DEBIAN_FRONTEND=noninteractive \
     SHELL=/bin/bash
 
-
+SHELL ["/bin/bash", "-c"]
 ARG RPY2_VERSION=RELEASE_3_5_1
 ARG RPY2_CFFI_MODE=BOTH
 
@@ -24,6 +24,7 @@ COPY install_apt.sh /opt/
 COPY install_rpacks.sh /opt/
 COPY install_pip.sh /opt/
 
+SHELL ["/bin/bash", "-c"]
 RUN \
     apt-get update -qq \
     && apt-get install -y wget
@@ -36,8 +37,8 @@ RUN \
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
     && ./Miniconda3-latest-Linux-x86_64.sh -b 
 RUN \
-    bash \
-    && echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
+    echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
+    && source ~/.bashrc \
     && conda init
 RUN \
     conda install -y pip
