@@ -21,14 +21,14 @@ COPY install_apt.sh /opt/
 COPY install_rpacks.sh /opt/
 COPY install_pip.sh /opt/
 
-RUN bash /opt/install_apt.sh \
-    && cd /root \
-    && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && chmod +x Miniconda3-latest-Linux-x86_64.sh \
-    && ./Miniconda3-latest-Linux-x86_64.sh -b \
-    && echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
-    && source ~/.bashrc \
-    && conda init
+RUN bash /opt/install_apt.sh 
+RUN cd /root \
+    && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+    # && chmod +x Miniconda3-latest-Linux-x86_64.sh \
+    # && ./Miniconda3-latest-Linux-x86_64.sh -b \
+    # && echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
+    # && source ~/.bashrc \
+    # && conda init
 
 RUN \
     bash /opt/install_rpacks.sh \
