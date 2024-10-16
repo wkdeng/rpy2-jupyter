@@ -30,10 +30,13 @@ RUN \
 
 RUN \
     cd /root \
-    && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+RUN \
+    cd /root \
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
-    && ./Miniconda3-latest-Linux-x86_64.sh -b \
-    && echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
+    && ./Miniconda3-latest-Linux-x86_64.sh -b 
+RUN \
+    echo 'export PATH=/root/miniconda3/bin:$PATH' >> ~/.bashrc \ 
     && source ~/.bashrc \
     && conda init
 RUN \
