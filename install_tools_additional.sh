@@ -25,6 +25,7 @@ cd ~
 
 # picard
 wget https://github.com/broadinstitute/picard/releases/download/2.27.5/picard.jar 
+mv picard.jar /usr/bin/
 
 mkdir bin
 cd bin
@@ -79,30 +80,8 @@ source ~/.bashrc
 cd apps
 wget https://faculty.washington.edu/browning/beagle/beagle.08Feb22.fa4.jar
 chmod +x ./*
-cp bgzip /usr/bin/
-cp picard.jar /usr/bin/
-cp tabix /usr/bin/
+# cp picard.jar /usr/bin/
 cp beagle.27Jul16.86a.jar /usr/bin/
 cp beagle.08Feb22.fa4.jar /usr/bin/
 cd ~
 
-
-
-
-## install SANGO
-conda create -n SANGO -y python=3.8
-conda init
-bash
-conda activate SANGO
-git clone https://github.com/cquzys/SANGO.git
-cd SANGO
-pip install -r requirements.txt
-pip install torch_geometric
-pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-1.13.1+cu117.html
-
-
-# ## install Cellcano
-# pip install Cython
-# pip install pkgconfig
-# git clone https://github.com/marvinquiet/Cellcano.git
-# cd Cellcano

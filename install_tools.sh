@@ -49,18 +49,19 @@ cd ..
 rm -rf bwa-0.7.17
 
 
-## Modified from https://github.com/hisplan/docker-cellranger, using dropbox to avoid installation of scing
+# ## Modified from https://github.com/hisplan/docker-cellranger, using dropbox to avoid installation of scing
 
-download_url="https://www.dropbox.com/s/h9mmenub0a7fjun/cellranger-7.1.0.tar"
-version="7.1.0"
+# download_url="https://www.dropbox.com/s/h9mmenub0a7fjun/cellranger-7.1.0.tar"
+# version="7.1.0"
 
-# cell ranger binaries
-wget ${download_url} \
-    && tar xf cellranger-${version}.tar \
-    && rm -rf cellranger-${version}.tar \
-    && mv cellranger-${version} /usr/local/bin/
+# # cell ranger binaries
+# wget ${download_url} \
+#     && tar xf cellranger-${version}.tar \
+#     && rm -rf cellranger-${version}.tar \
+#     && mv cellranger-${version} /usr/local/bin/
 
-ln -s /usr/local/bin/cellranger-${version}/bin/cellranger /usr/local/bin/cellranger
+# ln -s /usr/local/bin/cellranger-${version}/bin/cellranger /usr/local/bin/cellranger
+
 
 git clone https://github.com/JiekaiLab/scTE.git
 cd scTE

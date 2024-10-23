@@ -2,7 +2,7 @@
  # @author [Wankun Deng]
  # @email [dengwankun@gmail.com]
  # @create date 2023-04-10 10:22:42
- # @modify date 2023-11-20 11:11:19
+ # @modify date 2024-10-17 07:44:06
  # @desc [description]
 ###
 
@@ -36,7 +36,7 @@
 # devtools::install_version("crossmatch", version = "1.3.1", repos = "http://cran.us.r-project.org")
 # devtools::install_version("multicross", version = "2.1.0", repos = "http://cran.us.r-project.org")
 
-devtools::install_github("igordot/clustermole")
+# devtools::install_github("igordot/clustermole")
 # devtools::install_github("cran/crossmatch")
 # devtools::install_github("cran/multicross")
 
