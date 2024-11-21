@@ -178,6 +178,7 @@
 ###### Generating jpt_svr15 ######
 FROM dengwankun/bioinfo_env:jpt_svr14
 LABEL maintainer="Wankun Deng <dengwankun@gmail.com>"
+COPY Monopogen.py /tmp/Monopogen.py
 USER root
 
 # SHELL ["conda", "run", "--no-capture-output", "-n", "base", "/bin/bash", "-c"]
@@ -214,7 +215,10 @@ RUN cd ~ \
     && tar xzvf cellranger-8.0.1.tar.gz \
     && rm -rf cellranger-8.0.1.tar.gz \
     && mv cellranger-8.0.1 /usr/local/bin/ \
-    && ln -s /usr/local/bin/cellranger-8.0.1/cellranger /usr/local/bin/cellranger
+    && ln -s /usr/local/bin/cellranger-8.0.1/cellranger /usr/local/bin/cellranger \
+    && echo "export OPENBLAS_NUM_THREADS=32" >> ~/.bashrc \
+    && pip install --no-cache-dir episcanpy
+RUN mv /tmp/Monopogen.py /root/Monopogen/src/Monopogen.py
 
 SHELL ["/bin/bash", "-c"]
 
